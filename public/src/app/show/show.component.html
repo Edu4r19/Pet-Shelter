@@ -1,0 +1,13 @@
+<h1>Details about {{Pet.name}}</h1>
+<button [routerLink]="['/']" class="btn btn-link">Home</button>
+<h2>Pet Type:  <span>{{Pet.type}}</span></h2>
+<h2>Description: <span>{{Pet.description}}</span></h2>
+<h2>Skills:</h2>
+<h4 *ngFor='let skill of Pet.skills' style="margin-left: 20px;"><span>{{skill}}</span></h4>
+<h2>Likes:  {{Pet.likes}}</h2>
+<form (submit)='Like(Pet._id); clicked = true'>
+    <input type="submit" [disabled]="clicked" class="btn btn-success" value="Like Pet">
+</form>
+<form (submit)= 'DPsub(Pet._id)'>
+    <input type="submit" class="btn btn-primary" value="Adopt Pet!">
+</form>

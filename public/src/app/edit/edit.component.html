@@ -1,0 +1,35 @@
+<h1>Edit this Pet</h1>
+<button [routerLink]="['/']" class="btn btn-link">Home</button>
+<div class="fcontainer">
+    <form (submit)='UPsub()'>
+        <div class="form-group">
+            <label for="name">Pet Name:</label>
+            <p class="errorMsg" *ngIf="UPet.name.length < 3" style="color: rgb(235, 101, 101);">Pet's Name must be at least 3 characters long!</p>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]='UPet.name'>
+        </div>
+        <div class="form-group">
+            <label for="type">Pet Type:</label>
+            <p class="errorMsg" *ngIf="UPet.type.length < 3" style="color: rgb(235, 101, 101);">Pet's type must be at least 3 characters long!</p>
+            <input type="text" class="form-control" id="type" name="type" [(ngModel)]='UPet.type'>
+        </div>
+        <div class="form-group">
+            <label for="desc">Description:</label>
+            <input type="text" class="form-control" id="desc" name="desc" [(ngModel)]='UPet.description'>
+        </div>
+        <h2>Skills</h2>
+        <div class="form-group">
+            <label for="skill1">Skill 1:</label>
+            <input type="text" class="form-control" id="skill1" name="skill1" [(ngModel)]='UPet.skills[0]'>
+        </div>
+        <div class="form-group">
+            <label for="skill2">Skill 2:</label>
+            <input type="text" class="form-control" id="skill2" name="skill2" [(ngModel)]='UPet.skills[1]'>
+        </div>
+        <div class="form-group">
+            <label for="skill3">Skill 3:</label>
+            <input type="text" class="form-control" id="skill3" name="skill3" [(ngModel)]='UPet.skills[2]'>
+        </div>
+        <button [routerLink]="['/']" class="btn btn-danger">Cancel</button>
+        <input type="submit" class="btn btn-success" value="Edit Pet"/>
+    </form>
+</div>
